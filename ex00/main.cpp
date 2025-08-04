@@ -85,6 +85,32 @@ int main() {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
+    // Test 9: Assignment operator
+    std::cout << "\n--- Test 9: Assignment Operator ---" << std::endl;
+    try {
+        Bureaucrat first("First", 10);
+        Bureaucrat second("Second", 100);
+        std::cout << "Before assignment:" << std::endl;
+        std::cout << "First: " << first << std::endl;
+        std::cout << "Second: " << second << std::endl;
+        
+        second = first;  // Note: only grade is copied, name remains const
+        std::cout << "After assignment:" << std::endl;
+        std::cout << "First: " << first << std::endl;
+        std::cout << "Second: " << second << std::endl;
+    } catch (std::exception& e) {
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
+
+    // Test 10: Default constructor
+    std::cout << "\n--- Test 10: Default Constructor ---" << std::endl;
+    try {
+        Bureaucrat defaultBureaucrat;
+        std::cout << "Default: " << defaultBureaucrat << std::endl;
+    } catch (std::exception& e) {
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
+
     std::cout << "\n=== Tests Complete ===" << std::endl;
     return 0;
 }
