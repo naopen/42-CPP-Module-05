@@ -9,13 +9,16 @@ class RobotomyRequestForm : public AForm {
 private:
     const std::string _target;
 
+private:
+    // Assignment operator is private because of const members
+    RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
+
 public:
     // Orthodox Canonical Form
     RobotomyRequestForm();
     RobotomyRequestForm(const std::string& target);
     RobotomyRequestForm(const RobotomyRequestForm& other);
     virtual ~RobotomyRequestForm();
-    RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
 
     // Getters
     const std::string& getTarget() const;

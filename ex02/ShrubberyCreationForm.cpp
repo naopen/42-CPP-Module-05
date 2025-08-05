@@ -19,11 +19,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
-// Assignment operator
+// Assignment operator (private - cannot be used due to const members)
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other) {
     if (this != &other) {
         AForm::operator=(other);
-        // Note: _target is const, so we can't assign it
+        // This operator is private because _target is const and cannot be reassigned
     }
     return *this;
 }

@@ -8,13 +8,16 @@ class ShrubberyCreationForm : public AForm {
 private:
     const std::string _target;
 
+private:
+    // Assignment operator is private because of const members
+    ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
+
 public:
     // Orthodox Canonical Form
     ShrubberyCreationForm();
     ShrubberyCreationForm(const std::string& target);
     ShrubberyCreationForm(const ShrubberyCreationForm& other);
     virtual ~ShrubberyCreationForm();
-    ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
 
     // Getters
     const std::string& getTarget() const;

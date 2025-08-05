@@ -85,7 +85,7 @@ int main() {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    // Test 9: Assignment operator
+    // Test 9: Assignment operator (note: const members are not copied)
     std::cout << "\n--- Test 9: Assignment Operator ---" << std::endl;
     try {
         Bureaucrat first("First", 10);
@@ -94,10 +94,10 @@ int main() {
         std::cout << "First: " << first << std::endl;
         std::cout << "Second: " << second << std::endl;
         
-        second = first;  // Note: only grade is copied, name remains const
+        second = first;  // Note: only _grade is copied, _name remains const
         std::cout << "After assignment:" << std::endl;
         std::cout << "First: " << first << std::endl;
-        std::cout << "Second: " << second << std::endl;
+        std::cout << "Second: " << second << " (name unchanged due to const)" << std::endl;
     } catch (std::exception& e) {
         std::cout << "Exception: " << e.what() << std::endl;
     }

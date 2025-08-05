@@ -27,10 +27,12 @@ AForm::~AForm() {
 }
 
 // Assignment operator
+// Note: const members (_name, _gradeToSign, _gradeToExecute) cannot be reassigned
+// Only _signed state can be copied - this is a limitation of const members
 AForm& AForm::operator=(const AForm& other) {
     if (this != &other) {
-        // Note: _name, _gradeToSign, and _gradeToExecute are const, so we can't assign them
-        // For now, we only assign the _signed state
+        // Only non-const members can be assigned
+        // _name, _gradeToSign, and _gradeToExecute remain unchanged
         _signed = other._signed;
     }
     return *this;

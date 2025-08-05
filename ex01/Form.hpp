@@ -14,13 +14,16 @@ private:
     const int _gradeToSign;
     const int _gradeToExecute;
 
+private:
+    // Assignment operator is private because of const members
+    Form& operator=(const Form& other);
+
 public:
     // Orthodox Canonical Form
     Form();
     Form(const std::string& name, int gradeToSign, int gradeToExecute);
     Form(const Form& other);
     ~Form();
-    Form& operator=(const Form& other);
 
     // Getters
     const std::string& getName() const;

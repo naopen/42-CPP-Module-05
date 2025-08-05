@@ -24,11 +24,12 @@ Bureaucrat::~Bureaucrat() {
 }
 
 // Assignment operator
+// Note: _name is const and cannot be reassigned, only _grade is copied
+// This is a limitation when using const members in Orthodox Canonical Form
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
     if (this != &other) {
-        // Note: _name is const, so we can't assign it
-        // In a real implementation, we might need to reconsider the design
-        // For now, we only assign the grade
+        // _name is const, so it cannot be changed after construction
+        // Only non-const members can be assigned
         _grade = other._grade;
     }
     return *this;
